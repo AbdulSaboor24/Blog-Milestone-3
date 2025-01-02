@@ -5,9 +5,12 @@ import { createClient } from "next-sanity";
 import { useParams } from "next/navigation";
 import Image from "next/image";
 
+let projectid = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
+let dataset = process.env.NEXT_PUBLIC_SANITY_DATASET;
+
 const client = createClient({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "pi24mpj2",
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "production",
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
   apiVersion: "2022-03-07",
   useCdn: false,
 });
